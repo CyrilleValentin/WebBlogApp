@@ -1,13 +1,9 @@
 
 from django.contrib import admin
-from django.urls import path
-
-from auth_app import views
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.register, name='register'),
-    path('login/', views.login1, name='login'),
-    path('home/', views.home, name='home'),
-    path('logout/', views.logout1, name='logout'),
+    path('auth_app/', include('auth_app.urls')),
+    path('blog_app/', include('blog_app.urls')),
 ]
