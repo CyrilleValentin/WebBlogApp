@@ -49,6 +49,14 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -105,11 +113,51 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -161,6 +209,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -170,6 +226,14 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -209,11 +273,36 @@
         "documentation": {}
     },
     {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -248,7 +337,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-wc4sl78++i$))%hy^c@3ad03^^@jj_v2d2co8=3$ktt*&jh4x_'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-wc4sl78++i$))%hy^c@3ad03^^@jj_v2d2co8=3$ktt*&jh4x_'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'blog_app',\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -257,7 +346,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'blog_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -266,7 +355,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'auth_app',\n    'blog_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -275,7 +364,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'auth_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'auth_app',\n    'blog_app',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -433,6 +522,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "auth_app.migrations.0003_delete_user",
+        "description": "auth_app.migrations.0003_delete_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('auth_app', '0002_user_email'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='User',\n        ),\n    ]",
+        "detail": "auth_app.migrations.0003_delete_user",
+        "documentation": {}
+    },
+    {
         "label": "AuthAppConfig",
         "kind": 6,
         "importPath": "auth_app.apps",
@@ -484,6 +582,69 @@
         "description": "auth_app.views",
         "peekOfCode": "def logout1(request):\n    logout(request)\n    return redirect('login')",
         "detail": "auth_app.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "blog_app.migrations.0001_initial",
+        "description": "blog_app.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "blog_app.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "BlogAppConfig",
+        "kind": 6,
+        "importPath": "blog_app.apps",
+        "description": "blog_app.apps",
+        "peekOfCode": "class BlogAppConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'blog_app'",
+        "detail": "blog_app.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Tag",
+        "kind": 6,
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)",
+        "detail": "blog_app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Blog",
+        "kind": 6,
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "peekOfCode": "class Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    likes = models.PositiveIntegerField(default=0)\n    comments = models.PositiveIntegerField(default=0)",
+        "detail": "blog_app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Like",
+        "kind": 6,
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "peekOfCode": "class Like(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)\n    def save(self, *args, **kwargs):\n        super(Like, self).save(*args, **kwargs)\n        self.blog.likes = Like.objects.filter(blog=self.blog).count()\n        self.blog.save()\n    def delete(self, *args, **kwargs):\n        super(Like, self).delete(*args, **kwargs)\n        self.blog.likes = Like.objects.filter(blog=self.blog).count()",
+        "detail": "blog_app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comment",
+        "kind": 6,
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "peekOfCode": "class Comment(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)\n    content = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def save(self, *args, **kwargs):\n        super(Comment, self).save(*args, **kwargs)\n        self.blog.comments = Comment.objects.filter(blog=self.blog).count()\n        self.blog.save()\n    def delete(self, *args, **kwargs):",
+        "detail": "blog_app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "peekOfCode": "User = get_user_model()\nclass Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)",
+        "detail": "blog_app.models",
         "documentation": {}
     },
     {
