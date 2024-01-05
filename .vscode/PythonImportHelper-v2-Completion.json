@@ -676,7 +676,7 @@
         "kind": 5,
         "importPath": "blog_app.urls",
         "description": "blog_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n    path('post_detail/', views.post_detail, name='post_detail'),\n]",
         "detail": "blog_app.urls",
         "documentation": {}
     },
@@ -685,7 +685,16 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'home.html')",
+        "peekOfCode": "def home(request):\n    return render(request, 'home.html')\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')",
+        "detail": "blog_app.views",
+        "documentation": {}
+    },
+    {
+        "label": "post_detail",
+        "kind": 2,
+        "importPath": "blog_app.views",
+        "description": "blog_app.views",
+        "peekOfCode": "def post_detail(request):\n    return render(request, 'post_detail.html')",
         "detail": "blog_app.views",
         "documentation": {}
     },
