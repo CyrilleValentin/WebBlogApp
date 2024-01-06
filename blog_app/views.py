@@ -5,7 +5,8 @@ from blog_app.models import Blog
 # Create your views here.
 @login_required
 def home(request):
-    return render(request, 'home.html')
+    blogs = Blog.objects.all()
+    return render(request, 'home.html', {'blogs': blogs})
 @login_required
 def post_detail(request):
     return render(request, 'post_detail.html')
@@ -20,6 +21,6 @@ def create_blog(request):
         user = request.user
         blog = Blog(title=title, content=content, image=image, user=user)
         blog.save()
-       ## return redirect('list_blogs')  
+        return redirect('home') 
 
     return render(request, 'new_post.html')

@@ -701,7 +701,7 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'home.html')\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':",
+        "peekOfCode": "def home(request):\n    blogs = Blog.objects.all()\n    return render(request, 'home.html', {'blogs': blogs})\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):",
         "detail": "blog_app.views",
         "documentation": {}
     },
@@ -728,7 +728,7 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')\n        user = request.user\n        blog = Blog(title=title, content=content, image=image, user=user)\n        blog.save()\n       ## return redirect('list_blogs')  \n    return render(request, 'new_post.html')",
+        "peekOfCode": "def create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')\n        user = request.user\n        blog = Blog(title=title, content=content, image=image, user=user)\n        blog.save()\n        return redirect('home') \n    return render(request, 'new_post.html')",
         "detail": "blog_app.views",
         "documentation": {}
     },
