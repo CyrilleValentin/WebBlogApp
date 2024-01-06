@@ -249,6 +249,14 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -327,6 +335,14 @@
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Blog",
+        "importPath": "blog_app.models",
+        "description": "blog_app.models",
+        "isExtraImport": true,
+        "detail": "blog_app.models",
         "documentation": {}
     },
     {
@@ -676,7 +692,7 @@
         "kind": 5,
         "importPath": "blog_app.urls",
         "description": "blog_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n    path('post_detail/', views.post_detail, name='post_detail'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n    path('post_detail/', views.post_detail, name='post_detail'),\n    path('new_post/', views.new_post, name='new_post'),\n    path('create/', views.create_blog, name='create_blog'),\n]",
         "detail": "blog_app.urls",
         "documentation": {}
     },
@@ -685,7 +701,7 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'home.html')\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')",
+        "peekOfCode": "def home(request):\n    return render(request, 'home.html')\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':",
         "detail": "blog_app.views",
         "documentation": {}
     },
@@ -694,7 +710,25 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def post_detail(request):\n    return render(request, 'post_detail.html')",
+        "peekOfCode": "def post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')",
+        "detail": "blog_app.views",
+        "documentation": {}
+    },
+    {
+        "label": "new_post",
+        "kind": 2,
+        "importPath": "blog_app.views",
+        "description": "blog_app.views",
+        "peekOfCode": "def new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')\n        user = request.user\n        blog = Blog(title=title, content=content, image=image, user=user)\n        blog.save()",
+        "detail": "blog_app.views",
+        "documentation": {}
+    },
+    {
+        "label": "create_blog",
+        "kind": 2,
+        "importPath": "blog_app.views",
+        "description": "blog_app.views",
+        "peekOfCode": "def create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')\n        user = request.user\n        blog = Blog(title=title, content=content, image=image, user=user)\n        blog.save()\n       ## return redirect('list_blogs')  \n    return render(request, 'new_post.html')",
         "detail": "blog_app.views",
         "documentation": {}
     },
