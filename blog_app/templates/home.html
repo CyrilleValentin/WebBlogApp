@@ -4,12 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>home</title>
+	<title>Blog App</title>
 	<link rel="stylesheet" href="{% static "fontawesome/css/all.min.css" %}"> <!-- https://fontawesome.com/ -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "css/templatemo-xtra-blog.css" %}" rel="stylesheet">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 	<header class="tm-header" id="tm-header">
@@ -17,49 +17,29 @@
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="tm-site-header">
-                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
-                <h1 class="text-center">Xtra Blog</h1>
+            <a href="{% url 'home' %}" style="text-decoration: none;"> <h1 class="text-center">Blog App</h1></a> 
                 <h2 class="text-center">Bienvenue, {{ user.username }}!</h2>
-            </div>
-            
-                
-                <button><a href="{% url 'logout' %}">Déconnexion</a></button>
-         
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
                     <li class="tm-nav-item active"><a href="{% url 'home' %}"  class="tm-nav-link">
-                        <i class="fas fa-home"></i>
+                        <i class='bx bx-home' style="font-size:2rem; font-style:bold;"></i>
                         Accueil
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'new_post' %}" class="tm-nav-link">
-                        <i class="fas fa-pen"></i>
+                        <i class='bx bx-edit-alt'style="font-size:2rem; font-style:bold;"></i>
                         Nouveau Post
                     </a></li>
                     <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
                         <i class="fas fa-users"></i>
                         About Xtra
                     </a></li>
-                    <li class="tm-nav-item"><a href="contact.html" class="tm-nav-link">
-                        <i class="far fa-comments"></i>
-                        Contact Us
+                    <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
+                        <i class='bx bx-log-out bx-rotate-180' style="font-size:2rem; font-style:bold;"></i>
+                        Déconnexion
                     </a></li>
                 </ul>
             </nav>
-            <div class="tm-mb-65">
-                <a rel="nofollow" href="https://fb.com/templatemo" class="tm-social-link">
-                    <i class="fab fa-facebook tm-social-icon"></i>
-                </a>
-                <a href="https://twitter.com" class="tm-social-link">
-                    <i class="fab fa-twitter tm-social-icon"></i>
-                </a>
-                <a href="https://instagram.com" class="tm-social-link">
-                    <i class="fab fa-instagram tm-social-icon"></i>
-                </a>
-                <a href="https://linkedin.com" class="tm-social-link">
-                    <i class="fab fa-linkedin tm-social-icon"></i>
-                </a>
-            </div>
+            
         </div>
     </header>
     <div class="container-fluid">
@@ -81,24 +61,23 @@
                         {% for blog in blogs %}
                             <article class="col-12 col-md-6 tm-post">
                                 <hr class="tm-hr-primary">
-                                <a href="{% url 'post_detail' %}" class="effect-lily tm-post-link tm-pt-60">
+                                <a href="{% url 'post_detail' blog_id=blog.id %}" class="effect-lily tm-post-link tm-pt-60">
                                     <div class="tm-post-link-inner">
                                         {% if blog.image %}
-                                        <img src={{ blog.image_url }} alt="{{ blog.title }}" class="img-fluid">  
+                                        <img src={{ blog.image_url }} alt="{{ blog.title }}"  style="width:150px;height:200px;object-fit: fill; " >  
                                         {% endif %}                          
                                     </div>
-                                    {% comment %} <span class="position-absolute tm-new-badge">New</span> {% endcomment %}
                                     <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{ blog.title }}</h2>
                                 </a>                    
                             
                                 <div class="d-flex justify-content-between tm-pt-45">
-                                    <span class="tm-color-primary">Travel . Events</span>
-                                    <span class="tm-color-primary">June 24, 2020</span>
+                                    <span class="tm-color-primary">{{ blog.likes }} <i class='bx bx-heart'></i></span>
+                                    <span class="tm-color-primary">{{ blog.created_at|date:"d-m-Y" }}</span>
                                 </div>
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <span>{{ blog.comments }} commentaires</span>
-                                    <span>par {{ blog.user.username }}</span>
+                                    <span>Par {{ blog.user.username }}</span>
                                 </div>
                             </article>
                         {% endfor %}

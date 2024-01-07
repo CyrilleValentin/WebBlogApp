@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
+from .models import Blog
 
 from blog_app.models import Blog
 # Create your views here.
@@ -8,8 +10,9 @@ def home(request):
     blogs = Blog.objects.all()
     return render(request, 'home.html', {'blogs': blogs})
 @login_required
-def post_detail(request):
-    return render(request, 'post_detail.html')
+def post_detail(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'post_detail.html', {'blog': blog})
 @login_required
 def new_post(request):
     return render(request, 'new_post.html')
