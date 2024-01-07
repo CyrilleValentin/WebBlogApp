@@ -25,6 +25,23 @@
         "documentation": {}
     },
     {
+        "label": "blog_app",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "blog_app",
+        "description": "blog_app",
+        "detail": "blog_app",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "blog_app",
+        "description": "blog_app",
+        "isExtraImport": true,
+        "detail": "blog_app",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -86,6 +103,30 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -314,22 +355,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "views",
-        "importPath": "blog_app",
-        "description": "blog_app",
-        "isExtraImport": true,
-        "detail": "blog_app",
-        "documentation": {}
-    },
-    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
@@ -485,7 +510,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\n# Default primary key field type",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\nMEDIA_ROOT = BASE_DIR / \"blog_app/media\"",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -494,7 +519,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\nMEDIA_ROOT = BASE_DIR / \"blog_app/media\"\nMEDIA_URL = \"/media/blog_app/\"",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -503,7 +528,7 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\nMEDIA_ROOT = BASE_DIR / \"blog_app/media\"\nMEDIA_URL = \"/media/blog_app/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -512,7 +537,25 @@
         "kind": 5,
         "importPath": "AppBlog.settings",
         "description": "AppBlog.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'auth_app/static'),\n    os.path.join(BASE_DIR, 'blog_app/static')\n]\nMEDIA_ROOT = BASE_DIR / \"blog_app/media\"\nMEDIA_URL = \"/media/blog_app/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "AppBlog.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "AppBlog.settings",
+        "description": "AppBlog.settings",
+        "peekOfCode": "MEDIA_ROOT = BASE_DIR / \"blog_app/media\"\nMEDIA_URL = \"/media/blog_app/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "AppBlog.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "AppBlog.settings",
+        "description": "AppBlog.settings",
+        "peekOfCode": "MEDIA_URL = \"/media/blog_app/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "AppBlog.settings",
         "documentation": {}
     },
@@ -530,7 +573,7 @@
         "kind": 5,
         "importPath": "AppBlog.urls",
         "description": "AppBlog.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('auth_app/', include('auth_app.urls')),\n    path('blog_app/', include('blog_app.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('auth_app/', include('auth_app.urls')),\n    path('blog_app/', include('blog_app.urls')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "AppBlog.urls",
         "documentation": {}
     },
@@ -647,7 +690,7 @@
         "kind": 6,
         "importPath": "blog_app.models",
         "description": "blog_app.models",
-        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)",
+        "peekOfCode": "class Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    def image_url(self):\n        if self.image:",
         "detail": "blog_app.models",
         "documentation": {}
     },
@@ -656,7 +699,7 @@
         "kind": 6,
         "importPath": "blog_app.models",
         "description": "blog_app.models",
-        "peekOfCode": "class Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    likes = models.PositiveIntegerField(default=0)\n    comments = models.PositiveIntegerField(default=0)",
+        "peekOfCode": "class Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    def image_url(self):\n        if self.image:\n            return self.image.url\n        return ''\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)",
         "detail": "blog_app.models",
         "documentation": {}
     },
@@ -683,7 +726,7 @@
         "kind": 5,
         "importPath": "blog_app.models",
         "description": "blog_app.models",
-        "peekOfCode": "User = get_user_model()\nclass Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)",
+        "peekOfCode": "User = get_user_model()\nclass Tag(models.Model):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    def image_url(self):",
         "detail": "blog_app.models",
         "documentation": {}
     },

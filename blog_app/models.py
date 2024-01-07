@@ -13,6 +13,10 @@ class Blog(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     image = models.ImageField(upload_to='blog_images/', null=True, blank=True)
+    def image_url(self):
+        if self.image:
+            return self.image.url
+        return ''
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag)
     created_at = models.DateTimeField(auto_now_add=True)

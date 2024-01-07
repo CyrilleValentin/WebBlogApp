@@ -84,7 +84,7 @@
                                 <a href="{% url 'post_detail' %}" class="effect-lily tm-post-link tm-pt-60">
                                     <div class="tm-post-link-inner">
                                         {% if blog.image %}
-                                        <img src={{ blog.image.url }} alt="{{ blog.title }}" class="img-fluid">  
+                                        <img src={{ blog.image_url }} alt="{{ blog.title }}" class="img-fluid">  
                                         {% endif %}                          
                                     </div>
                                     {% comment %} <span class="position-absolute tm-new-badge">New</span> {% endcomment %}
