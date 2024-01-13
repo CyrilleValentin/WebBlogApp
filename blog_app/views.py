@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-from .models import Blog
+from .models import Blog, Like
 
 
 # Create your views here.
@@ -38,6 +38,15 @@ def create_blog(request):
 
 @login_required
 def like_post(request,):
+    user=request.user
+    if request.method=='POST':
+        post_id=request.POST.get('post_id')
+        post_obj=Blog.objects.get(id=post_id)
+        if user in post_obj.likes.all():
+             post_obj.likes.remove(user)
+        else:
+             post_obj.likes.add(user) 
+       # likes, created=Like.objects.get_or_create(user=user,post_id=post_id)   
     return redirect('home')
     
 
