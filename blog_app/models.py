@@ -1,3 +1,4 @@
+from winreg import HKEY_CURRENT_USER
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -17,30 +18,29 @@ class Blog(models.Model):
         if self.image:
             return self.image.url
         return ''
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='user')
     tags = models.ManyToManyField(Tag)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    likes = models.PositiveIntegerField(default=0)
-    comments = models.PositiveIntegerField(default=0)
-
+    likes = models.ManyToManyField(User, default=None,blank=True,related_name='liked_blogs')
     def __str__(self):
         return self.title
+    @property
+    def number_of_likes(self):
+        return self.likes.all().count() 
 
+# Like_CHOICES=(
+#     ('Like','Like'),
+#     ('Unlike','Unlike')
+# ) 
+      
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
-
-    def save(self, *args, **kwargs):
-        super(Like, self).save(*args, **kwargs)
-        self.blog.likes = Like.objects.filter(blog=self.blog).count()
-        self.blog.save()
-
-    def delete(self, *args, **kwargs):
-        super(Like, self).delete(*args, **kwargs)
-        self.blog.likes = Like.objects.filter(blog=self.blog).count()
-        self.blog.save()
-
+   # value=models.CharField(choices='Like' or 'Unlike',defaut='Like')
+    def __str__(self):
+        return str(self.blog)
+   
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)

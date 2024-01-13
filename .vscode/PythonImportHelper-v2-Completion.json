@@ -138,78 +138,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -239,6 +167,38 @@
         "description": "django.contrib.auth.forms",
         "isExtraImport": true,
         "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -306,6 +266,22 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "auth_app.models",
         "description": "auth_app.models",
@@ -355,19 +331,35 @@
         "documentation": {}
     },
     {
+        "label": "HKEY_CURRENT_USER",
+        "importPath": "winreg",
+        "description": "winreg",
+        "isExtraImport": true,
+        "detail": "winreg",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "audioop",
+        "description": "audioop",
+        "isExtraImport": true,
+        "detail": "audioop",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
         "isExtraImport": true,
         "detail": "django.contrib.auth.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "Blog",
-        "importPath": "blog_app.models",
-        "description": "blog_app.models",
-        "isExtraImport": true,
-        "detail": "blog_app.models",
         "documentation": {}
     },
     {
@@ -587,33 +579,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "auth_app.migrations.0001_initial",
-        "description": "auth_app.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='User',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=50)),",
-        "detail": "auth_app.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "auth_app.migrations.0002_user_email",
-        "description": "auth_app.migrations.0002_user_email",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('auth_app', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='user',\n            name='email',\n            field=models.EmailField(blank=True, default='', max_length=254, unique=True),\n        ),",
-        "detail": "auth_app.migrations.0002_user_email",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "auth_app.migrations.0003_delete_user",
-        "description": "auth_app.migrations.0003_delete_user",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('auth_app', '0002_user_email'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='User',\n        ),\n    ]",
-        "detail": "auth_app.migrations.0003_delete_user",
-        "documentation": {}
-    },
-    {
         "label": "AuthAppConfig",
         "kind": 6,
         "importPath": "auth_app.apps",
@@ -699,7 +664,7 @@
         "kind": 6,
         "importPath": "blog_app.models",
         "description": "blog_app.models",
-        "peekOfCode": "class Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    def image_url(self):\n        if self.image:\n            return self.image.url\n        return ''\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    tags = models.ManyToManyField(Tag)",
+        "peekOfCode": "class Blog(models.Model):\n    title = models.CharField(max_length=255)\n    content = models.TextField()\n    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)\n    def image_url(self):\n        if self.image:\n            return self.image.url\n        return ''\n    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='user')\n    tags = models.ManyToManyField(Tag)",
         "detail": "blog_app.models",
         "documentation": {}
     },
@@ -708,7 +673,7 @@
         "kind": 6,
         "importPath": "blog_app.models",
         "description": "blog_app.models",
-        "peekOfCode": "class Like(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)\n    def save(self, *args, **kwargs):\n        super(Like, self).save(*args, **kwargs)\n        self.blog.likes = Like.objects.filter(blog=self.blog).count()\n        self.blog.save()\n    def delete(self, *args, **kwargs):\n        super(Like, self).delete(*args, **kwargs)\n        self.blog.likes = Like.objects.filter(blog=self.blog).count()",
+        "peekOfCode": "class Like(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)\n   # value=models.CharField(choices='Like' or 'Unlike',defaut='Like')\n    def __str__(self):\n        return str(self.blog)\nclass Comment(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)\n    content = models.TextField()",
         "detail": "blog_app.models",
         "documentation": {}
     },
@@ -735,7 +700,7 @@
         "kind": 5,
         "importPath": "blog_app.urls",
         "description": "blog_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n    path('post_detail/', views.post_detail, name='post_detail'),\n    path('new_post/', views.new_post, name='new_post'),\n    path('create/', views.create_blog, name='create_blog'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('home/', views.home, name='home'),\n    path('post_detail/<int:blog_id>/', views.post_detail, name='post_detail'),\n    path('new_post/', views.new_post, name='new_post'),\n    path('create/', views.create_blog, name='create_blog'),\n   path('like/', views.like_post, name='like_blog'),\n]",
         "detail": "blog_app.urls",
         "documentation": {}
     },
@@ -744,7 +709,7 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def home(request):\n    blogs = Blog.objects.all()\n    return render(request, 'home.html', {'blogs': blogs})\n@login_required\ndef post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):",
+        "peekOfCode": "def home(request):\n    blogs = Blog.objects.all()\n    user=request.user\n    context={\n        'blogs':blogs,    \n        'user':user,    \n    }\n    return render(request, 'home.html', {'blogs': blogs})\n@login_required\ndef post_detail(request, blog_id):",
         "detail": "blog_app.views",
         "documentation": {}
     },
@@ -753,7 +718,7 @@
         "kind": 2,
         "importPath": "blog_app.views",
         "description": "blog_app.views",
-        "peekOfCode": "def post_detail(request):\n    return render(request, 'post_detail.html')\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')",
+        "peekOfCode": "def post_detail(request, blog_id):\n    blog = get_object_or_404(Blog, pk=blog_id)\n    return render(request, 'post_detail.html', {'blog': blog})\n@login_required\ndef new_post(request):\n    return render(request, 'new_post.html')\ndef create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')",
         "detail": "blog_app.views",
         "documentation": {}
     },
@@ -772,6 +737,15 @@
         "importPath": "blog_app.views",
         "description": "blog_app.views",
         "peekOfCode": "def create_blog(request):\n    if request.method == 'POST':\n        title = request.POST.get('title')\n        content = request.POST.get('content')\n        image = request.FILES.get('image')\n        user = request.user\n        blog = Blog(title=title, content=content, image=image, user=user)\n        blog.save()\n        return redirect('home') \n    return render(request, 'new_post.html')",
+        "detail": "blog_app.views",
+        "documentation": {}
+    },
+    {
+        "label": "like_post",
+        "kind": 2,
+        "importPath": "blog_app.views",
+        "description": "blog_app.views",
+        "peekOfCode": "def like_post(request,):\n    return redirect('home')",
         "detail": "blog_app.views",
         "documentation": {}
     },
