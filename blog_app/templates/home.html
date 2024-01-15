@@ -70,7 +70,7 @@
                                         <img src={{ blog.image_url }} alt="{{ blog.title }}" class="img-fluid">  
                                         {% endif %}                          
                                     </div>
-                                    {% comment %} <span class="position-absolute tm-new-badge">New</span> {% endcomment %}
+                                    
                                     <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{ blog.title }}</h2>
                                 </a>                    
                             
@@ -91,7 +91,7 @@
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <span>{{ blog.comments }} commentaires</span>
-                                    <span>par {{ blog.user.username }}</span>
+                                    <span>Par {{ blog.user.username }}</span>
                                 </div>
                             </article>
                         {% endfor %}

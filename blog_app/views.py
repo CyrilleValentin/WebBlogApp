@@ -3,23 +3,24 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-from .models import Blog, Like
+from .models import Blog, Comment
 
 
 # Create your views here.
 @login_required
 def home(request):
     blogs = Blog.objects.all()
-    user=request.user
-    context={
-        'blogs':blogs,    
-        'user':user,    
-    }
     return render(request, 'home.html', {'blogs': blogs})
 @login_required
 def post_detail(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
-    return render(request, 'post_detail.html', {'blog': blog})
+    comments = Comment.objects.filter(blog=blog).order_by('-created_at')
+
+    if request.method == 'POST':
+        content = request.POST.get('message')  # Obtenez le contenu du commentaire depuis le formulaire
+        user = request.user
+        comment = Comment.objects.create(user=user, blog=blog, content=content)
+    return render(request, 'post_detail.html', {'blog': blog,'comments': comments})
 
 @login_required
 def new_post(request):
@@ -45,9 +46,7 @@ def like_post(request,):
         if user in post_obj.likes.all():
              post_obj.likes.remove(user)
         else:
-             post_obj.likes.add(user) 
-       # likes, created=Like.objects.get_or_create(user=user,post_id=post_id)   
+             post_obj.likes.add(user)   
     return redirect('home')
-    
 
 

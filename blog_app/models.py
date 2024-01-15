@@ -28,16 +28,10 @@ class Blog(models.Model):
     @property
     def number_of_likes(self):
         return self.likes.all().count() 
-
-# Like_CHOICES=(
-#     ('Like','Like'),
-#     ('Unlike','Unlike')
-# ) 
       
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
-   # value=models.CharField(choices='Like' or 'Unlike',defaut='Like')
     def __str__(self):
         return str(self.blog)
    
@@ -46,13 +40,6 @@ class Comment(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-
-    def save(self, *args, **kwargs):
-        super(Comment, self).save(*args, **kwargs)
-        self.blog.comments = Comment.objects.filter(blog=self.blog).count()
-        self.blog.save()
-
-    def delete(self, *args, **kwargs):
-        super(Comment, self).delete(*args, **kwargs)
-        self.blog.comments = Comment.objects.filter(blog=self.blog).count()
-        self.blog.save()
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return f'{self.user.username} - {self.blog.title} - {self.created_at}'
