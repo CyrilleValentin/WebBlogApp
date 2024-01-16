@@ -19,7 +19,7 @@ class Blog(models.Model):
             return self.image.url
         return ''
     user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='user')
-    tags = models.ManyToManyField(Tag)
+    tags = models.ForeignKey(Tag,default=None, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, default=None,blank=True,related_name='liked_blogs')

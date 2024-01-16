@@ -45,10 +45,25 @@
     </header>
     <div class="container-fluid">
         <main class="tm-main">
-            
+            <form action="{% url 'create_tag' %}" method="post">
+                {% csrf_token %}
+                <h2 class="tm-color-primary tm-post-title mb-4">Entrer une nouvelle catégorie</h2>
+                <div class="mb-4" style="display: flex;justify-content: space-between;">
+                    <input class="form-control" style="width: 20rem;" name="name" type="text" placeholder="Entrer une catégorie">
+                    <button type="submit" class="tm-btn tm-btn-primary tm-btn-small">Sauvegarder</button>
+                </div>
+            </form>
                             <form method="post" action="{% url 'create_blog' %}" class="mb-5 "enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <h2 class="tm-color-primary tm-post-title mb-4">Entrer les informations sur votre post</h2>
+                                <div class="mb-4">
+                                    <select class="form-control" name="tag">
+                                        <option value="">Selectionnner une categorie</option>
+                                        {% for tag in tags %}
+                                            <option value="{{ tag.id }}">{{ tag.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                                 <div class="mb-4">
                                     <input class="form-control" name="title" type="text" placeholder="Entrer le titre du post">
                                 </div>

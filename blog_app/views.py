@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-from .models import Blog, Comment
+from .models import Blog, Comment,Tag
 
 
 # Create your views here.
@@ -25,19 +25,29 @@ def post_detail(request, blog_id):
 
 @login_required
 def new_post(request):
-    return render(request, 'new_post.html')
-
+    tags = Tag.objects.all()
+    return render(request, 'new_post.html', {'tags': tags})
+@login_required
 def create_blog(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         content = request.POST.get('content')
         image = request.FILES.get('image')
         user = request.user
-        blog = Blog(title=title, content=content, image=image, user=user)
+        tag_id = request.POST.get('tag')
+        tag = Tag.objects.get(id=tag_id)
+        blog = Blog(title=title, content=content, tags=tag, image=image, user=user)
         blog.save()
         return redirect('home') 
     return render(request, 'new_post.html')
-
+@login_required
+def create_tag(request):
+     if request.method == 'POST':
+        name = request.POST.get('name')
+        # Créez le tag
+        Tag.objects.create(name=name)
+        return redirect('new_post')
+     
 @login_required
 def like_post(request,):
     user=request.user
