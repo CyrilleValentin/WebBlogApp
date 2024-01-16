@@ -17,9 +17,10 @@ def post_detail(request, blog_id):
     comments = Comment.objects.filter(blog=blog).order_by('-created_at')
 
     if request.method == 'POST':
-        content = request.POST.get('message')  # Obtenez le contenu du commentaire depuis le formulaire
+        content = request.POST.get('message') 
         user = request.user
         comment = Comment.objects.create(user=user, blog=blog, content=content)
+        return redirect('post_detail', blog_id=blog_id)
     return render(request, 'post_detail.html', {'blog': blog,'comments': comments})
 
 @login_required

@@ -1,101 +1,108 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Blog App</title>
-	<link rel="stylesheet" href="{% static "fontawesome/css/all.min.css" %}"> <!-- https://fontawesome.com/ -->
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <link rel="stylesheet" href="{% static " fontawesome/css/all.min.css" %}"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/ -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "css/templatemo-xtra-blog.css" %}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-	<header class="tm-header" id="tm-header">
+    <header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-            <a href="{% url 'home' %}" style="text-decoration: none;"> <h1 class="text-center">Blog App</h1></a> 
-            <nav class="tm-nav" id="tm-nav">            
+            <a href="{% url 'home' %}" style="text-decoration: none;">
+                <h1 class="text-center">Blog App</h1>
+            </a>
+            <nav class="tm-nav" id="tm-nav">
                 <ul>
                     <li class="tm-nav-item"><a href="{% url 'home' %}" class="tm-nav-link">
-                        <i class='bx bx-home' style="font-size:2rem; font-style:bold;"></i>
-                        Accueil
-                    </a></li>
-                    <li class="tm-nav-item active"><a  href="{% url 'new_post' %}" class="tm-nav-link">
-                        <i class='bx bx-edit-alt'style="font-size:2rem; font-style:bold;"></i>
-                        Nouveau Post
-                    </a></li>
+                            <i class='bx bx-home' style="font-size:2rem; font-style:bold;"></i>
+                            Accueil
+                        </a></li>
+                    <li class="tm-nav-item active"><a href="{% url 'new_post' %}" class="tm-nav-link">
+                            <i class='bx bx-edit-alt' style="font-size:2rem; font-style:bold;"></i>
+                            Nouveau Post
+                        </a></li>
                     <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
-                        <i class="fas fa-users"></i>
-                        About Xtra
-                    </a></li>
-                    <li class="tm-nav-item"><a href="{% url 'logout' %}"class="tm-nav-link">
-                        <i class='bx bx-log-out bx-rotate-180' style="font-size:2rem; font-style:bold;"></i>
-                        Déconnexion
-                    </a></li>
+                            <i class="fas fa-users"></i>
+                            About Xtra
+                        </a></li>
+                    <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
+                            <i class='bx bx-log-out bx-rotate-180' style="font-size:2rem; font-style:bold;"></i>
+                            Déconnexion
+                        </a></li>
                 </ul>
             </nav>
-          
+
         </div>
     </header>
     <div class="container-fluid">
         <main class="tm-main">
             <!-- Search form -->
-                    
+
             <div class="row tm-row">
-                <div class="col-12"style="margin-right:4rem;">
+                <div class="col-12" style="margin-right:4rem;">
                     <hr class="tm-hr-primary tm-mb-55">
                     <!-- Video player 1422x800 -->
                     {% if blog.image %}
-                        <img src={{ blog.image_url }} alt="{{ blog.title }}" style="width:954px;height:535px;object-fit: fill; " >  
-                    {% endif %}   
-                    
+                    <img src={{ blog.image_url }} alt="{{ blog.title }}"
+                        style="width:954px;height:535px;object-fit: fill; ">
+                    {% endif %}
+
                 </div>
             </div>
             <div class="row tm-row">
                 <div class="col-lg-8 tm-post-col">
-                    <div class="tm-post-full">  
-                        {% block content %}                  
-                            <div class="mb-4">
-                                <h2 class="pt-2 tm-color-primary tm-post-title">{{ blog.title }}</h2>
-                                <p class="tm-mb-40">{{ blog.created_at|date:"d-m-Y" }} Publier par {{ blog.user.username }}</p>
-                                <p>{{ blog.content }} </p>
-                            </div>
+                    <div class="tm-post-full">
+                        {% block content %}
+                        <div class="mb-4">
+                            <h2 class="pt-2 tm-color-primary tm-post-title">{{ blog.title }}</h2>
+                            <p class="tm-mb-40">{{ blog.created_at|date:"d-m-Y" }} Publier par {{ blog.user.username }}
+                            </p>
+                            <p>{{ blog.content }} </p>
+                        </div>
                         {% endblock %}
                         <!-- Comments -->
                         <div>
                             <h2 class="tm-color-primary tm-post-title">Commentaires</h2>
                             <hr class="tm-hr-primary tm-mb-45">
-                            <div class="tm-comment tm-mb-45">
-                                
-                                <div>
-                                    <h2 class="tm-color-primary">Nom</h2>
-                                    <p>
-                                        Praesent aliquam ex vel lectus ornare tritique. Nunc et eros
-                                        quis enim feugiat tincidunt et vitae dui. Nullam consectetur
-                                        justo ac ex laoreet rhoncus. Nunc id leo pretium, faucibus 
-                                        sapien vel, euismod turpis.
-                                    </p>
-                                    <div class="d-flex justify-content-between">
-                                        <a href="#" class="tm-color-primary">Répondre</a>
-                                        <span class="tm-color-primary">June 14, 2020</span>
-                                    </div>                                                 
-                                </div>                                
-                            </div>
-                            
-                            <form method="POST" action="{% url 'post_detail' blog_id=blog.id  %}" class="mb-5 tm-comment-form">
+                            {% for comment in comments %}
+                                <div class="tm-comment tm-mb-45">
+                                    <div>
+                                            <h2 class="tm-color-primary">{{ comment.user.username }}</h2>
+                                        <p>
+                                            {{ comment.content }}
+                                        </p>
+                                        <div class="d-flex justify-content-between"style="display: flex;  width: 25rem; justify-content: space-between;">
+                                            <a href="#" class="tm-color-primary"onclick="replyTo('{{ comment.user.username }}')">Répondre</a>
+                                            <span class="tm-color-primary"> il y a {{ comment.time_elapsed }}</span>
+                                        </div>                                                 
+                                    </div>                                
+                                </div>
+                            {% endfor %}
+                           
+
+                            <form method="POST" action="{% url 'post_detail' blog_id=blog.id  %}"
+                                class="mb-5 tm-comment-form">
                                 {% csrf_token %}
                                 <h2 class="tm-color-primary tm-post-title mb-4">Ton commentaire</h2>
                                 <div class="mb-4">
-                                    <textarea class="form-control" name="message" rows="6"></textarea>
+                                    <textarea id="commentTextArea" class="form-control" name="message" rows="6"placeholder="Votre commentaire"></textarea>
                                 </div>
                                 <div class="text-right">
-                                    <button type="submit" class="tm-btn tm-btn-primary tm-btn-small">Envoyez</button>                        
-                                </div>                                
-                            </form>                          
+                                    <button type="submit" class="tm-btn tm-btn-primary tm-btn-small">Envoyez</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -116,13 +123,15 @@
                         <a href="#" class="d-block tm-mb-40">
                             <figure>
                                 <img src="img/img-02.jpg" alt="Image" class="mb-3 img-fluid">
-                                <figcaption class="tm-color-primary">Duis mollis diam nec ex viverra scelerisque a sit</figcaption>
+                                <figcaption class="tm-color-primary">Duis mollis diam nec ex viverra scelerisque a sit
+                                </figcaption>
                             </figure>
                         </a>
                         <a href="#" class="d-block tm-mb-40">
                             <figure>
                                 <img src="img/img-05.jpg" alt="Image" class="mb-3 img-fluid">
-                                <figcaption class="tm-color-primary">Integer quis lectus eget justo ullamcorper ullamcorper</figcaption>
+                                <figcaption class="tm-color-primary">Integer quis lectus eget justo ullamcorper
+                                    ullamcorper</figcaption>
                             </figure>
                         </a>
                         <a href="#" class="d-block tm-mb-40">
@@ -131,12 +140,13 @@
                                 <figcaption class="tm-color-primary">Nam lobortis nunc sed faucibus commodo</figcaption>
                             </figure>
                         </a>
-                    </div>                    
+                    </div>
                 </aside>
             </div>
             <footer class="row tm-row">
                 <div class="col-md-6 col-12 tm-color-gray">
-                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-external-link">TemplateMo</a>
+                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com"
+                        class="tm-external-link">TemplateMo</a>
                 </div>
                 <div class="col-md-6 col-12 tm-color-gray tm-copyright">
                     Copyright 2020 Xtra Blog Company Co. Ltd.
@@ -144,7 +154,15 @@
             </footer>
         </main>
     </div>
+    <script>
+        function replyTo(username) {
+            var commentTextArea = document.getElementById('commentTextArea');
+            commentTextArea.value = '@' + username + ' '; // Ajoute le nom d'utilisateur avec '@' dans le champ de commentaire
+            commentTextArea.focus(); // Place le curseur dans le champ de commentaire
+        }
+    </script>   
     <script src="{% static "js/jquery.min.js" %}"></script>
     <script src="{% static "js/templatemo-script.js" %}"></script>
 </body>
+
 </html>

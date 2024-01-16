@@ -1,3 +1,4 @@
+from django.utils import timezone
 from winreg import HKEY_CURRENT_USER
 from django.db import models
 from django.contrib.auth import get_user_model
@@ -43,3 +44,15 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return f'{self.user.username} - {self.blog.title} - {self.created_at}'
+    def time_elapsed(self):
+        now = timezone.now()
+        elapsed_time = now - self.created_at
+
+        if elapsed_time.days > 0:
+            return f"{elapsed_time.days} jours"
+        elif elapsed_time.seconds // 3600 > 0:
+            return f"{elapsed_time.seconds // 3600} heures"
+        elif elapsed_time.seconds // 60 > 0:
+            return f"{elapsed_time.seconds // 60} minutes"
+        else:
+            return f"{elapsed_time.seconds} secondes"
