@@ -2,7 +2,6 @@ from django.utils import timezone
 from winreg import HKEY_CURRENT_USER
 from django.db import models
 from django.contrib.auth import get_user_model
-
 User = get_user_model()
 
 class Tag(models.Model):
@@ -24,11 +23,17 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, default=None,blank=True,related_name='liked_blogs')
+    comments = models.ManyToManyField(User, default=None, blank=True, related_name='commented_blogs')
     def __str__(self):
         return self.title
     @property
     def number_of_likes(self):
-        return self.likes.all().count() 
+        return self.likes.all().count()
+    @property
+    def number_of_comments(self):
+        return self.comments.all().count() 
+    def total_comments(self):
+        return self.comments.count()
       
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -56,3 +61,4 @@ class Comment(models.Model):
             return f"{elapsed_time.seconds // 60} minutes"
         else:
             return f"{elapsed_time.seconds} secondes"
+   
