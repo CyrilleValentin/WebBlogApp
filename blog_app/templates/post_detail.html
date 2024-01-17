@@ -33,8 +33,8 @@
                             <i class='bx bx-edit-alt' style="font-size:2rem; font-style:bold;"></i>
                             Nouveau Post
                         </a></li>
-                    <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
-                            <i class="fas fa-users"></i>
+                    <li class="tm-nav-item"><a href="{% url 'categories' %}" class="tm-nav-link">
+                        <i class='bx bx-category'style="font-size:2rem; font-style:bold;"></i>
                           Catégories
                         </a></li>
                     <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
@@ -61,32 +61,33 @@
 
                 </div>
             </div>
-            <div class="row tm-row">
+            <div class="row tm-row" style="width: 300rem;">
                 <div class="col-lg-8 tm-post-col">
                     <div class="tm-post-full">
                         {% block content %}
                         <div class="mb-4">
-                            <h2 class="pt-2 tm-color-primary tm-post-title">{{ blog.title }}</h2>
-                            <p class="tm-mb-40">{{ blog.created_at|date:"d-m-Y" }} Publier par {{ blog.user.username }}
-                            </p>
+                            <div style="display: flex;justify-content: space-between;">
+                                <p class="tm-mb-40">{{ blog.created_at|date:"d-m-Y" }}</p>
+                            <span> Publier par {{ blog.user.username }}</span>
+                            </div>
+                            <h2 class="pt-2 tm-color-primary tm-post-title">Titre: {{ blog.title }}</h2>
+                            
                             <p>{{ blog.content }} </p>
                         </div>
                         {% endblock %}
                         <!-- Comments -->
                         <div ">
-                            <h2 class="tm-color-primary tm-post-title">Commentaires</h2>
-                            <hr class="tm-hr-primary tm-mb-45">
+                            <h2 class="tm-color-primary tm-post-title" >Commentaires</h2>
+                            <hr class="tm-hr-primary tm-mb-4" style="width: 50rem;">
                             {% for comment in comments %}
-                                <div class="tm-comment tm-mb-45">
+                                <div class="tm-comment tm-mb-4" style="width: 40rem; ">
                                     <div>
-                                            <h2 class="tm-color-primary">{{ comment.user.username }}</h2>
-                                        <p>
-                                            {{ comment.content }}
-                                        </p>
-                                        <div class="d-flex justify-content-between"style="display: flex;  width: 25rem; justify-content: space-between;">
-                                            <a href="#" class="tm-color-primary"onclick="replyTo('{{ comment.user.username }}')">Répondre</a>
-                                            <span class="tm-color-primary"> il y a {{ comment.time_elapsed }}</span>
-                                        </div>                                                 
+                                            <p><span class="tm-color-primary" style="font-weight: bold;">{{ comment.user.username }}</span> {{ comment.content }} </p>  
+                                            <div style="display: flex;  width: 40rem; justify-content: space-between;">
+                                                <a href="#" class="tm-color-primary"onclick="replyTo('{{ comment.user.username }}')">Répondre</a>
+                                                <span class="tm-color-primary"> il y a {{ comment.time_elapsed }}</span>
+                                            </div>                                                 
+                                            <hr style="width: 40rem;">                  
                                     </div>                                
                                 </div>
                             {% endfor %}
@@ -95,11 +96,11 @@
                             <form method="POST" action="{% url 'post_detail' blog_id=blog.id  %}"
                                 class="mb-5 tm-comment-form">
                                 {% csrf_token %}
-                                <h2 class="tm-color-primary tm-post-title mb-4">Ton commentaire</h2>
-                                <div class="mb-4">
+                                <h2 class="tm-color-primary tm-post-title mb-4" style="margin-top: 1rem;">Ton commentaire</h2>
+                                <div class="mb-4" style="width: 40rem;">
                                     <textarea id="commentTextArea" class="form-control" name="message" rows="6"placeholder="Votre commentaire"></textarea>
                                 </div>
-                                <div class="text-right">
+                                <div class="text-right" style="display: flex; justify-content: flex-end;width: 40rem;">
                                     <button type="submit" class="tm-btn tm-btn-primary tm-btn-small">Envoyez</button>
                                 </div>
                             </form>
@@ -107,15 +108,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="row tm-row">
-                <div class="col-md-6 col-12 tm-color-gray">
-                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com"
-                        class="tm-external-link">TemplateMo</a>
-                </div>
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2020 Xtra Blog Company Co. Ltd.
-                </div>
-            </footer>
+          
         </main>
     </div>
     <script>

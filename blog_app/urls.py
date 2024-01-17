@@ -8,4 +8,6 @@ urlpatterns = [
     path('createPost/', views.create_blog, name='create_blog'),
     path('createTag/', views.create_tag, name='create_tag'),
     path('like/', views.like_post, name='like_blog'),
+    path('categories/', views.categories, name='categories'),
+
 ]

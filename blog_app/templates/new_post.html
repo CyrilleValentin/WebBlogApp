@@ -30,9 +30,9 @@
                         <i class='bx bx-edit-alt'style="font-size:2rem; font-style:bold;"></i>
                         Nouveau Post
                     </a></li>
-                    <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
-                        <i class="fas fa-users"></i>
-                        About Xtra
+                    <li class="tm-nav-item"><a href="{% url 'categories' %}" class="tm-nav-link">
+                        <i class='bx bx-category'style="font-size:2rem; font-style:bold;"></i>
+                        Catégories
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
                         <i class='bx bx-log-out bx-rotate-180' style="font-size:2rem; font-style:bold;"></i>
@@ -84,14 +84,6 @@
                 </div>
               
             </div>
-            <footer class="row tm-row">
-                <div class="col-md-6 col-12 tm-color-gray">
-                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-external-link">TemplateMo</a>
-                </div>
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2020 Xtra Blog Company Co. Ltd.
-                </div>
-            </footer>
         </main>
     </div>
     <script>

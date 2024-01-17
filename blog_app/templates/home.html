@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>home</title>
+	<title>Accueil</title>
 	<link rel="stylesheet" href="{% static "fontawesome/css/all.min.css" %}"> <!-- https://fontawesome.com/ -->
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
@@ -19,9 +19,6 @@
             </button>
                      
                 <h1 class="text-center">Blog App</h1>
-                <h2 class="text-center">Bienvenue, {{ user.username }}!</h2>
-
-         
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
                     <li class="tm-nav-item active"><a href="{% url 'home' %}"  class="tm-nav-link">
@@ -32,12 +29,12 @@
                         <i class="fas fa-pen"></i>
                         Nouveau Post
                     </a></li>
-                    <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
-                        <i class="fas fa-users"></i>
-                        About Xtra
+                    <li class="tm-nav-item"><a href="{% url 'categories' %}" class="tm-nav-link">
+                        <i class='bx bx-category'style="font-size:2rem; font-style:bold;"></i>
+                        Catégories
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'logout' %}" class="tm-nav-link">
-                        <i class="far fa-comments"></i>
+                        <i class='bx bx-log-out bx-rotate-180' style="font-size:2rem; font-style:bold;"></i>
                         Déconnexion
                     </a></li>
                 </ul>
@@ -101,14 +98,6 @@
                     {% endif %}
                 {% endblock %}
             </div>
-            
-            <footer class="row tm-row">
-                <hr class="col-12">
-               
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2020 Xtra Blog Company Co. Ltd.
-                </div>
-            </footer>
         </main>
     </div>
     <script src={% static "js/jquery.min.js" %}></script>

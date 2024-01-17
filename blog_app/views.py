@@ -60,4 +60,13 @@ def like_post(request,):
              post_obj.likes.add(user)   
     return redirect('home')
 
+def categories(request):
+    tags = Tag.objects.all()
+    categories_with_blogs = []
+
+    for tag in tags:
+        blogs = Blog.objects.filter(tags=tag)
+        categories_with_blogs.append({'tag': tag, 'blogs': blogs})
+
+    return render(request, 'categories.html', {'categories_with_blogs': categories_with_blogs})
 
