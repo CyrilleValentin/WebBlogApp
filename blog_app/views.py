@@ -10,7 +10,7 @@ from .models import Blog, Comment,Tag
 @login_required
 def home(request):
     blogs = Blog.objects.all()
-    return render(request, 'home.html', {'blogs': blogs,})
+    return render(request, 'home.html', {'blogs': blogs})
 @login_required
 def post_detail(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
