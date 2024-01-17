@@ -10,13 +10,6 @@
   <body>
     <h1>Inscription</h1>
     <form class="login-form" method="post" action="{% url 'register' %}">
-      {% if messages %}
-        <div class="error-messages" style="background-color: red; border-radius: 5px;color: white;">
-          {% for message in messages %}
-            <p class="error">{{ message }}</p>
-          {% endfor %}
-        </div>
-      {% endif %}
 
       {% csrf_token %}
       <div class="flex-row">
